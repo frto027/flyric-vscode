@@ -1,0 +1,161 @@
+{
+	"name": "flyric",
+	"displayName": "flyric",
+	"description": "a helper to edit flyric file",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/frto027/flyric-vscode.git"
+	},
+	"author": "frto027",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:frc",
+		"onCommand:flyric.lrcext.filefromlrc",
+		"onCommand:flyric.config.formatoutput"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Flyric",
+			"properties": {
+				"flyric.convert.LineStartTime": {
+					"type": "string",
+					"default": "%flyric.convert.line.starttime.absolute.title%",
+					"enum": [
+						"%flyric.convert.line.starttime.absolute.title%",
+						"%flyric.convert.line.starttime.priv_line.title%"
+					]
+				},
+				"flyric.convert.NodeStartTime": {
+					"type": "string",
+					"default": "%flyric.convert.node.starttime.relative_node.title%",
+					"enum": [
+						"%flyric.convert.node.starttime.absolute.title%",
+						"%flyric.convert.node.starttime.relative_line.title%",
+						"%flyric.convert.node.starttime.relative_node.title%"
+					]
+				},
+				"flyric.convert.LineDuration": {
+					"type": "string",
+					"default": "%flyric.convert.line.duration.solid.title%",
+					"enum": [
+						"%flyric.convert.line.duration.solid.title%",
+						"%flyric.convert.line.duration.between.title%"
+					]
+				},
+				"flyric.convert.NodeDuration": {
+					"type": "string",
+					"default": "%flyric.convert.node.duration.between.title%",
+					"enum": [
+						"%flyric.convert.node.duration.solid_next_node.title%",
+						"%flyric.convert.node.duration.solid_next_line.title%",
+						"%flyric.convert.node.duration.between.title%"
+					]
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "frc",
+				"extensions": [
+					".frc"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "frc",
+				"scopeName": "source.frc",
+				"path": "./syntaxes/frc.tmLanguage.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "flyric.linecolors.toggle",
+				"title": "%flyric.linecolor.toggle.title%"
+			},
+			{
+				"command": "flyric.lrcext.linefromlrc",
+				"title": "%flyric.lrcext.fromlrc.title%"
+			},
+			{
+				"command": "flyric.jump_to_property",
+				"title": "%flyric.jump_to_property.title%"
+			},
+			{
+				"command": "flyric.lrcext.filefromlrc",
+				"title": "%flyric.lrcext.filefromlrc.title%"
+			},
+			{
+				"command": "flyric.csvext.toflyc",
+				"title": "%flyric.csvext.toflyc.title%"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "resourceExtname == .frc",
+					"command": "flyric.linecolors.toggle",
+					"group": "switch"
+				},
+				{
+					"when": "resourceExtname == .frc",
+					"command": "flyric.jump_to_property",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "resourceExtname == .frc",
+					"command": "flyric.lrcext.linefromlrc"
+				},
+				{
+					"when": "resourceExtname == .frc",
+					"command": "flyric.csvext.toflyc"
+				}
+			],
+			"explorer/context": [
+				{
+					"when": "resourceExtname == .lrc",
+					"command": "flyric.lrcext.filefromlrc"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "flyric.jump_to_property",
+				"key": "ctrl+shift+j",
+				"when": "resourceExtname == .frc"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.36.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.0.0-next.0"
+	}
+}

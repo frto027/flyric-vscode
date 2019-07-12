@@ -1,0 +1,17 @@
+{
+    "flyric.linecolor.toggle.title":"切换行颜色显示",
+    "flyric.lrcext.fromlrc.title":"将lrc歌词转换为frc歌词",
+    "flyric.jump_to_property.title":"跳到属性",
+    "flyric.lrcext.filefromlrc.title":"将Lrc文件转换为Frc文件",
+    "flyric.csvext.toflyc.title":"将csv约定转换为Frc文件",
+    "flyric.convert.line.starttime.absolute.title":"0.使用常数填充",
+    "flyric.convert.line.starttime.priv_line.title":"1.使用前一行的相对值填充",
+    "flyric.convert.node.starttime.absolute.title":"0.使用常数填充",
+    "flyric.convert.node.starttime.relative_line.title":"1.使用所在行(Line)的相对值填充",
+    "flyric.convert.node.starttime.relative_node.title":"2.使用上一个节点(Node)的相对值填充",
+    "flyric.convert.line.duration.solid.title":"0.使用常数填充",
+    "flyric.convert.line.duration.between.title":"1.使用'between'关键字填充",
+    "flyric.convert.node.duration.solid_next_node.title":"0.常数，持续到下一个节点(Node)开始",
+    "flyric.convert.node.duration.solid_next_line.title":"1.常数，持续到下一行(Line)开始",
+    "flyric.convert.node.duration.between.title":"2.使用'between'关键字填充"
+}

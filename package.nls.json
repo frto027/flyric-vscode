@@ -1,0 +1,21 @@
+{
+    "flyric.linecolor.toggle.title":"Toggle line color",
+    "flyric.lrcext.fromlrc.title":"From lrc to flyric",
+    "flyric.jump_to_property.title":"Jump property",
+    "flyric.lrcext.filefromlrc.title":"convert lrc to frc format",
+    "flyric.csvext.toflyc.title":"convert csv to frc format",
+
+    "========CAUTION.OF.CONVERT.TITLES============":
+    "numbers in 'flyric.convert.*' such as '0.' '1.' is important,never remove it in this file and translate file",
+
+    "flyric.convert.line.starttime.absolute.title":"0.absolute",
+    "flyric.convert.line.starttime.priv_line.title":"1.relative to priv line",
+    "flyric.convert.node.starttime.absolute.title":"0.absolute",
+    "flyric.convert.node.starttime.relative_line.title":"1.relative to line",
+    "flyric.convert.node.starttime.relative_node.title":"2.relative to node",
+    "flyric.convert.line.duration.solid.title":"0.fill with constant value",
+    "flyric.convert.line.duration.between.title":"1.fill with 'between'",
+    "flyric.convert.node.duration.solid_next_node.title":"0.fill with constant(next node start)",
+    "flyric.convert.node.duration.solid_next_line.title":"1.fill with constant(next line start)",
+    "flyric.convert.node.duration.between.title":"2.fill with 'between'"
+}
