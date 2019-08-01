@@ -215,7 +215,12 @@ function lrcTofrc(lrc: string, type_id: number, start_time_id: number, duration_
 }
 
 function lrcToFrcFile(text: string) {
-	return `[flyc]\nType,StartTime,Text,Duration\n${lrcTofrc(text,0,1,3,2)}`;
+	let title = `[flyc]\nType,StartTime,Text,Duration,ColorR,ColorG,ColorB,ColorA,AnchorX,AnchorY,SelfAnchorX,SelfAnchorY\n`;
+
+	let defValue = `line,0,N,0,1,1,1,0,.5,.5,.5,.5\n`;
+
+	let frc = lrcTofrc(text,0,1,3,2);
+	return title + defValue + frc;
 }
 
 export function reg(context: vscode.ExtensionContext, frcSelector: vscode.DocumentSelector) {
