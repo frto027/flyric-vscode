@@ -95,9 +95,9 @@ function absDataToFrc(data: { time: number, node: { time: number, txt: string }[
 		let duringText;
 		if (last_line_time === null || frc_convert_config.relative_line_time === frc_convert_line_relative_type.absolute) {
 			last_line_time = linedata.time;
-			curLineTimeText = "" + linedata.time;
+			curLineTimeText = linedata.time.toFixed(0);
 		} else if (frc_convert_config.relative_line_time === frc_convert_line_relative_type.priv_line) {
-			curLineTimeText = ">" + (linedata.time - last_line_time);
+			curLineTimeText = ">" + (linedata.time - last_line_time).toFixed(0);
 		} else {
 			curLineTimeText = "0";
 		}
@@ -110,7 +110,7 @@ function absDataToFrc(data: { time: number, node: { time: number, txt: string }[
 			if (index + 1 < data.length) {
 				dur = (data[index + 1].time - linedata.time);
 			}
-			duringText = "" + dur;
+			duringText = dur.toFixed(0);
 		}
 		//insert line here
 		if (ret !== "") {
@@ -139,19 +139,19 @@ function absDataToFrc(data: { time: number, node: { time: number, txt: string }[
 				if (ndur < 0) {
 					ndur = 0;
 				}
-				nodeDurationText = "" + ndur;
+				nodeDurationText = ndur.toFixed(0);
 			} else if (frc_convert_config.node_duration_time === frc_covert_node_duration_type.solid_next_node) {
-				nodeDurationText = "" + (arr[nindex + 1].time - nodedata.time);
+				nodeDurationText = (arr[nindex + 1].time - nodedata.time).toFixed(0);
 			} else {
 				nodeDurationText = "between";
 			}
 
 			if (frc_convert_config.relative_node_time === frc_covert_node_relative_type.absolute) {
-				nodeStartText = "" + nodedata.time;
+				nodeStartText = nodedata.time.toFixed(0);
 			} else if (frc_convert_config.relative_node_time === frc_covert_node_relative_type.relative_line) {
-				nodeStartText = ">" + (nodedata.time - linedata.time);
+				nodeStartText = ">" + (nodedata.time - linedata.time).toFixed(0);
 			} else if (frc_convert_config.relative_node_time === frc_covert_node_relative_type.relative_node) {
-				nodeStartText = ">>" + (nodedata.time - last_node_time);
+				nodeStartText = ">>" + (nodedata.time - last_node_time).toFixed(0);
 				last_node_time = nodedata.time;
 			} else {
 				nodeStartText = "";
