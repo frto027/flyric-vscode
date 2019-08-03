@@ -8,6 +8,7 @@
 		"url": "https://github.com/frto027/flyric-vscode.git"
 	},
 	"author": "frto027",
+	"publisher":"frto027",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.36.0"

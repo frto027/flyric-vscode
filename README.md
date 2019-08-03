@@ -21,22 +21,39 @@
 
 无第三方依赖
 
+## 从Release安装
+
+可以从[Github release](https://github.com/frto027/flyric-vscode/releases/)下载最新的发布版本
+
+假定下载的文件为`flyric-0.0.1.vsix`，使用下面的指令安装
+```s
+code --install-extension flyric-0.0.1.vsix
+```
+另外，如果觉得插件没有用了，还可以这样卸载它：
+```s
+code --uninstall-extension frto027.flyric
+```
+建议切换vscode语言为中文，上面的code指令需要安装vscode时勾选添加到PATH环境变量的相关选项才能使用。
+```
+可以在VSCode市场中安装Chinese(Simplified)Language Pack，重启后自动切换中文
+也可以通过Ctrl+Shift+P输入Configure Display Language来进行切换
+```
 ## 编译运行插件
 
-插件没有发布，在debug模式下运行插件需要安装nodejs和vscode，下面的步骤假定你安装了这两个软件  
+除上面的方式外，也可以从源代码编译运行插件，在debug模式下运行插件需要安装nodejs和vscode，下面的步骤假定你安装了这两个软件  
 你可以这样运行插件：  
 以windows为例  
 首先下载解压这个git的内容，并cd到git所在目录，如果你安装了git，可以在某个文件夹右键"Git Bash Here"，然后输入：
-```
+```s
 git clone git@github.com:frto027/flyric-vscode.git
 cd flyric-vscode
 ```
 之后务必执行node的初始化命令：
-```
+```s
 npm install
 ```
 最后执行下面的指令打开vscode：
-```
+```s
 code .
 ```
 在vscode中，可以使用F5来启动测试
@@ -61,7 +78,9 @@ code .
 - 切换行颜色功能后，需要改动一下文档或者重新打开文档才能生效
 ## Release Notes
 
-暂时没有Release
+### 0.0.1
+
+- github发布一个Release，alpha版本
 
 ### 0.0.0
 
